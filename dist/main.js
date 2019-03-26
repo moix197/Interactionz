@@ -39,7 +39,7 @@
             content: "----Click----"
         },*/
         clickEvent: {
-            url:"http://google.com",
+            url:"https://github.com/moix197/Interactionz/blob/master/dist/interactionz.js",
             content: "Thanks for Downloading!",
             extraMethod: function(){
                 clickMeCta.toggle()

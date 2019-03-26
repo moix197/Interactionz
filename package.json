@@ -1,7 +1,8 @@
 {
-  "name": "buttons",
+  "name": "Interactionz",
   "version": "1.0.0",
-  "description": "",
+  "description": "Manage all you interactions, making it easier and faster for your development",
+  "homepage": "https://moix197.github.io/Interactionz",
   "dependencies": {},
   "devDependencies": {
     "css-loader": "^2.1.1",
