@@ -1,0 +1,13 @@
+/*This is the only style needed for the library to work*/
+/*it resets the css of a button*/
+.resetBtn{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
