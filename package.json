@@ -5,6 +5,7 @@
   "dependencies": {},
   "devDependencies": {
     "css-loader": "^2.1.1",
+    "gh-pages": "^2.0.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
@@ -12,7 +13,8 @@
   "scripts": {
     "test": "dev",
     "dev": "webpack --mode=development --watch",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Moises Montilla",
   "license": "ISC"
