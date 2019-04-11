@@ -7,7 +7,7 @@ class Interactionz extends AnimationsLib{
         super();
         let elementClassStyles;
         //In the followring two lines we get the values from the classes that are set
-        //in the eelemnt, in case we need it to handle the interactions.
+        //in the eelement, in case we need it to handle the interactions.
         this.btnElement = document.getElementById(params.selector);
         elementClassStyles = getComputedStyle(this.btnElement);
 
@@ -25,7 +25,7 @@ class Interactionz extends AnimationsLib{
         this.bgColor = typeof this.colors.bgColor != 'undefined' ? this.colors.bgColor : elementClassStyles.backgroundColor;
         this.borderColor = typeof this.colors.borderColor != 'undefined' ? this.colors.borderColor : elementClassStyles.borderColor;
 
-
+        //check if there's a clickevent
         if(this.clickEvent && this.clickEvent.toggleElement){
             this.toggleValues = typeof this.clickEvent.toggleElement != 'undefined' ? this.clickEvent.toggleElement : false;
             this.toggleElementID = typeof this.toggleValues.selector != 'undefined' ? this.toggleValues.selector : false;
@@ -47,7 +47,6 @@ class Interactionz extends AnimationsLib{
     }   
 
     init() {
-
         this.resetBtnCss && this.btnElement.classList.add('resetBtn');
         this.content && this.setContent(this.content,false);
         this.colors && this.setBgColor(this.bgColor).setFontColor(this.fontColor).setBorderColor(this.borderColor);
@@ -66,6 +65,7 @@ class Interactionz extends AnimationsLib{
             this.setSiblingsData();
         }
     }
+
     //down here just clases for setting stuff like "classes", "content", etc.
     setClass(givenClass){
         //if a class is given, apply it
@@ -122,10 +122,6 @@ class Interactionz extends AnimationsLib{
     }
     
     setHoverState(){
-        //I do this with css classes because I like the css animations,
-        //you could use something fancy like Greensock tweenmax
-        //but it would increase a lot the size of the library, 
-        //so at least for now we are good this way
         this.btnElement.addEventListener('mouseover',() => {
             this.hover.content && this.setContent(this.hover.content);
             if(this.hover.type == "switch"){
@@ -147,7 +143,7 @@ class Interactionz extends AnimationsLib{
     //events related stuff
 
     setClickEvent(){
-        //just setting an onclick handler
+        //just setting an onclick handler to trigger all needed methods
         this.btnElement.addEventListener('click', (event) => {
             event.stopPropagation();
             this.clickEvent.url && this.openURL();
@@ -184,7 +180,7 @@ class Interactionz extends AnimationsLib{
     }
 
     handleSiblings(){
-
+        //just modifiying the "status" of the siblings to open if need and changing the styles to the right one.
         let siblingElementsAry = [...document.querySelectorAll(`[data-siblings=${this.siblingsDataName}]`)];
         siblingElementsAry.map((item) => {
             let itemID = item.attributes.id.value;

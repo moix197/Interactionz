@@ -1,5 +1,6 @@
 class Animationz{
-
+    //no too many comments here.
+    //the names are kind of self explanatory
     constructor(){
         this.inProgressAnimation;
         this.elementToAnimate;
